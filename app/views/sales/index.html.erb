@@ -16,6 +16,22 @@
     #B3B6B8
 }
 
+.card.bg-danger{
+    background-color: #B7535A !important;
+}
+.card.bg-danger > .card-footer{
+    background-color: #973E44 !important;
+    #B3B6B8
+}
+
+.card.bg-success{
+    background-color: #3EB45B !important;
+}
+.card.bg-success > .card-footer{
+    background-color: #329C50 !important;
+    #B3B6B8
+}
+
 .sub-card{
     border-radius: 0.50rem !important;
     margin-top: 10px;
@@ -24,26 +40,169 @@
 .card-footer{
     border-top: none;
     background-color: #FFFFFF;
+    font-weight: bold;
+}
+.mr-5{
+    color:#5e5e5e;
+    font-size: 15px;
+}
+.mr-3{
+    color:#5e5e5e;
+    font-size: 13px;
+    padding-left: 15px;
+    padding-top: 10px;
+}
+
+.text-green{
+    color: #37B96E;
+}
+.card-body > h5{
+    font-weight: bold;
+}
+.card-body{
+    padding: 8px;
 }
 </style>
 
-<div class="container-fluid">
-    <!-- Icon Cards-->
-    <div class="">
-        <button type="submit" class="btn btn-primary ">Adicionar negócio</button>
-    </div>
-    <hr>
-    <%= render @sales %>
-</div>
 
-<!--
-<%= form_for:sale, url: sales_path do |f| %>
-<%= f.hidden_field :status, :value => 1 %>
-<%= f.label :name %>
-<%= f.text_field :name %>
-<%= f.label :description %>
-<%= f.text_field :description %>:
-<%= f.label :price %>
-<%= f.text_field :price %>
-<%= f.submit %>
-<% end %> -->
+<!-- Icon Cards-->
+
+<div class="">
+    <button type="submit" class="btn btn-primary "><img src="<%= image_path("icons/cash.png") %>" alt="Negócio" width="35"> Adicionar negócio</button>
+</div>
+<hr>
+
+<div class="row">
+    <div class="col-md-2">
+        <div class="card text-white bg-primary">
+            <div class="card-body">
+                <i><h5>Contato</h5></i>
+            </div>
+            <div class="card-footer text-white clearfix z-1a">
+                <i class="float-left">R$15.0000,000</i>
+                <i class="float-right">2 Negócios</i>
+            </div>
+        </div>
+        <div>
+            <%- @sales.each do |sale| %>
+            <div class="card sub-card">
+                <div class="card-body">
+                    <div class="mr-5"><%= sale.name %></div>
+                    <div class="mr-3"><img src="" alt="Negócio" width="35"> <%= sale.description %></div>
+                </div>
+                <div class="card-footer small">
+                    <span class="float-right text-green">
+                        R$ <%= sale.price %>
+                    </span>
+                </div>
+            </div>
+            <% end  %>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="card text-white bg-primary">
+            <div class="card-body">
+                <i><h5>Envio de Proposta</h5></i>
+            </div>
+            <div class="card-footer text-white clearfix z-1a">
+                <i class="float-left">R$15.0000,000</i>
+                <i class="float-right">2 Negócios</i>
+            </div>
+        </div>
+        <div>
+            <div class="card sub-card">
+                <div class="card-body">
+                    <div class="mr-5">TESTE</div>
+                    <div class="mr-3"><img src="" alt="Negócio" width="35"> TESTE</div>
+                </div>
+                <div class="card-footer small">
+                    <span class="float-right text-green">
+                        R$ 5.000,00
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="card text-white bg-primary">
+            <div class="card-body">
+                <i><h5>Fallow-up</h5></i>
+            </div>
+            <div class="card-footer text-white clearfix z-1a">
+                <i class="float-left">R$15.0000,000</i>
+                <i class="float-right">2 Negócios</i>
+            </div>
+        </div>
+        <div>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="card text-white bg-primary">
+            <div class="card-body">
+                <i><h5>Fechamento</h5></i>
+            </div>
+            <div class="card-footer text-white clearfix z-1a">
+                <i class="float-left">R$15.0000,000</i>
+                <i class="float-right">2 Negócios</i>
+            </div>
+        </div>
+        <div>
+            <div class="card sub-card">
+                <div class="card-body">
+                    <div class="mr-5">Manutenção</div>
+                    <div class="mr-3"><img src="" alt="Negócio" width="35"> Confeitaria</div>
+                </div>
+                <div class="card-footer small">
+                    <span class="float-right text-green">
+                        R$ 5.000,00
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="card text-white bg-success">
+            <div class="card-body">
+                <i><h5>Ganhos</h5></i>
+            </div>
+            <div class="card-footer text-white clearfix z-1a">
+                <i class="float-left">R$15.0000,000</i>
+                <i class="float-right">2 Negócios</i>
+            </div>
+        </div>
+        <div>
+        </div>
+    </div>
+    <div class="col-md-2">
+        <div class="card text-white bg-danger">
+            <div class="card-body">
+                <i><h5>Perdidos</h5></i>
+            </div>
+            <div class="card-footer text-white clearfix z-1a">
+                <i class="float-left">R$15.0000,000</i>
+                <i class="float-right">2 Negócios</i>
+            </div>
+        </div>
+        <div>
+        </div>
+    </div>
+</div>
+</div>
+<br><br><br><br>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h2>Adicionar novo negócio</h2>
+            <%= form_for:sale, url: sales_path do |f| %>
+            <%= f.hidden_field :status, :value => 1 %>
+            <%= f.label :name %>
+            <%= f.text_field :name ,class:'form-control' %>
+            <%= f.label :description %>
+            <%= f.text_field :description , class: 'form-control'%>
+            <%= f.label :price %>
+            <%= f.text_field :price , class: 'form-control'%>
+            <%= f.submit %>
+            <% end %>
+        </div>
+    </div>
+</div>
