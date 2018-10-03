@@ -1,0 +1,49 @@
+<hr>
+<style>
+.btn.btn-primary{
+    background-color: #2385E3;
+}
+
+.card{
+    border-radius: 0px;
+}
+
+.card.bg-primary{
+    background-color: #5B7BA8 !important;
+}
+.card.bg-primary > .card-footer{
+    background-color: #506C92 !important;
+    #B3B6B8
+}
+
+.sub-card{
+    border-radius: 0.50rem !important;
+    margin-top: 10px;
+}
+
+.card-footer{
+    border-top: none;
+    background-color: #FFFFFF;
+}
+</style>
+
+<div class="container-fluid">
+    <!-- Icon Cards-->
+    <div class="">
+        <button type="submit" class="btn btn-primary ">Adicionar negócio</button>
+    </div>
+    <hr>
+    <%= render @sales %>
+</div>
+
+<!--
+<%= form_for:sale, url: sales_path do |f| %>
+<%= f.hidden_field :status, :value => 1 %>
+<%= f.label :name %>
+<%= f.text_field :name %>
+<%= f.label :description %>
+<%= f.text_field :description %>:
+<%= f.label :price %>
+<%= f.text_field :price %>
+<%= f.submit %>
+<% end %> -->
