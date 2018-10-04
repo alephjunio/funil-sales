@@ -6,6 +6,7 @@
 
 .card{
     border-radius: 0px;
+
 }
 
 .card.bg-primary{
@@ -13,7 +14,7 @@
 }
 .card.bg-primary > .card-footer{
     background-color: #506C92 !important;
-    #B3B6B8
+
 }
 
 .card.bg-danger{
@@ -21,7 +22,7 @@
 }
 .card.bg-danger > .card-footer{
     background-color: #973E44 !important;
-    #B3B6B8
+
 }
 
 .card.bg-success{
@@ -29,12 +30,14 @@
 }
 .card.bg-success > .card-footer{
     background-color: #329C50 !important;
-    #B3B6B8
+
 }
 
 .sub-card{
-    border-radius: 0.50rem !important;
+    border-radius: 0.40rem !important;
     margin-top: 10px;
+    border: 1px solid #B3B6B8;
+    box-shadow: 2px 3px #B3B6B8;
 }
 
 .card-footer{
@@ -84,11 +87,13 @@
             </div>
         </div>
         <div>
+
+
             <%- @sales.each do |sale| %>
             <div class="card sub-card">
                 <div class="card-body">
                     <div class="mr-5"><%= sale.name %></div>
-                    <div class="mr-3"><img src="" alt="Negócio" width="35"> <%= sale.description %></div>
+                    <div class="mr-3"><img src="<%= image_path("icons/compay.png") %>" width="20"> <%= sale.description %></div>
                 </div>
                 <div class="card-footer small">
                     <span class="float-right text-green">
@@ -113,7 +118,7 @@
             <div class="card sub-card">
                 <div class="card-body">
                     <div class="mr-5">TESTE</div>
-                    <div class="mr-3"><img src="" alt="Negócio" width="35"> TESTE</div>
+                    <div class="mr-3">TESTE</div>
                 </div>
                 <div class="card-footer small">
                     <span class="float-right text-green">
@@ -150,7 +155,7 @@
             <div class="card sub-card">
                 <div class="card-body">
                     <div class="mr-5">Manutenção</div>
-                    <div class="mr-3"><img src="" alt="Negócio" width="35"> Confeitaria</div>
+                    <div class="mr-3">Confeitaria</div>
                 </div>
                 <div class="card-footer small">
                     <span class="float-right text-green">
