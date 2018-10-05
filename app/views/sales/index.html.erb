@@ -1,77 +1,6 @@
 <hr>
-<style>
-.btn.btn-primary{
-    background-color: #2385E3;
-}
-
-.card{
-    border-radius: 0px;
-
-}
-
-.card.bg-primary{
-    background-color: #5B7BA8 !important;
-}
-.card.bg-primary > .card-footer{
-    background-color: #506C92 !important;
-
-}
-
-.card.bg-danger{
-    background-color: #B7535A !important;
-}
-.card.bg-danger > .card-footer{
-    background-color: #973E44 !important;
-
-}
-
-.card.bg-success{
-    background-color: #3EB45B !important;
-}
-.card.bg-success > .card-footer{
-    background-color: #329C50 !important;
-
-}
-
-.sub-card{
-    border-radius: 0.40rem !important;
-    margin-top: 10px;
-    border: 1px solid #B3B6B8;
-    box-shadow: 2px 3px #B3B6B8;
-}
-
-.card-footer{
-    border-top: none;
-    background-color: #FFFFFF;
-    font-weight: bold;
-}
-.mr-5{
-    color:#5e5e5e;
-    font-size: 15px;
-}
-.mr-3{
-    color:#5e5e5e;
-    font-size: 13px;
-    padding-left: 15px;
-    padding-top: 10px;
-}
-
-.text-green{
-    color: #37B96E;
-}
-.card-body > h5{
-    font-weight: bold;
-}
-.card-body{
-    padding: 8px;
-}
-</style>
-
-
-<!-- Icon Cards-->
-
 <div class="">
-    <button type="submit" class="btn btn-primary "><img src="<%= image_path("icons/cash.png") %>" alt="Negócio" width="35"> Adicionar negócio</button>
+    <button id="new-contact" class="btn btn-primary "><img src="<%= image_path("icons/cash.png") %>" alt="Negócio" width="35"> Adicionar negócio</button>
 </div>
 <hr>
 
@@ -82,11 +11,41 @@
                 <i><h5>Contato</h5></i>
             </div>
             <div class="card-footer text-white clearfix z-1a">
-                <i class="float-left">R$15.0000,000</i>
-                <i class="float-right">2 Negócios</i>
+                <i class="float-left">R$ <%= @saleContactsSumPrice %></i>
+                <i class="float-right"><%= @saleContactsCount %> Negócios</i>
             </div>
         </div>
         <div>
+
+            <!-- <img src="<%= image_path("icons/incheck.png") %>" width="20"> -->
+            <div id='add-contact' style="display:none;">
+                <div class="card sub-card">
+                        <%= form_for:sale, :html => { :id => "form-sale" } ,url: sales_path do |f| %>
+                        <%= f.hidden_field :status, :value => 1 %>
+                    <div class="card-body">
+                        <div class="mr-5">
+                            <!-- <input class="form-card" type="text" id="name" name='name' placeholder="Titulo do Negócio"> -->
+                            <%= f.text_field :name ,class:'form-card', placeholder: "Titulo do Negócio" %>
+                            <span class="form-submit" id="submit">
+                                <img  src="<%= image_path("icons/check.png") %>" width="22">
+                            </span>
+                            <span class="form-cancel">
+                                <img id="cancel" src="<%= image_path("icons/incheck.png") %>" width="14">
+                            </span>
+                        </div>
+                        <div class="mr-3">
+                            <img src="<%= image_path("icons/compay.png") %>" width="20">
+                            <%= f.text_field :description , class:'form-card', placeholder: "Nome do Cliente"%>
+                        </div>
+                    </div>
+                    <div class="card-footer small">
+                        <span class="float-right text-green">
+                            R$ <%= f.text_field :price , class:'form-card form-card-cash', placeholder: "0,00"%>
+                        </span>
+                    </div>
+                    <% end %>
+                </div>
+            </div>
 
 
             <%- @sales.each do |sale| %>
@@ -192,22 +151,4 @@
         </div>
     </div>
 </div>
-</div>
-<br><br><br><br>
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <h2>Adicionar novo negócio</h2>
-            <%= form_for:sale, url: sales_path do |f| %>
-            <%= f.hidden_field :status, :value => 1 %>
-            <%= f.label :name %>
-            <%= f.text_field :name ,class:'form-control' %>
-            <%= f.label :description %>
-            <%= f.text_field :description , class: 'form-control'%>
-            <%= f.label :price %>
-            <%= f.text_field :price , class: 'form-control'%>
-            <%= f.submit %>
-            <% end %>
-        </div>
-    </div>
 </div>

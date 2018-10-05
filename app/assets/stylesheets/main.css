@@ -1,0 +1,77 @@
+.btn.btn-primary{
+    background-color: #2385E3;
+}
+
+.card{
+    border-radius: 0px;
+
+}
+
+.card.bg-primary{
+    background-color: #5B7BA8 !important;
+}
+.card.bg-primary > .card-footer{
+    background-color: #506C92 !important;
+
+}
+
+.card.bg-danger{
+    background-color: #B7535A !important;
+}
+.card.bg-danger > .card-footer{
+    background-color: #973E44 !important;
+
+}
+
+.card.bg-success{
+    background-color: #3EB45B !important;
+}
+.card.bg-success > .card-footer{
+    background-color: #329C50 !important;
+
+}
+
+.sub-card{
+    border-radius: 0.40rem !important;
+    margin-top: 10px;
+    border: 1px solid #B3B6B8;
+    box-shadow: 2px 3px #B3B6B8;
+}
+
+.card-footer{
+    border-top: none;
+    background-color: #FFFFFF;
+    font-weight: bold;
+}
+.mr-5{
+    color:#5e5e5e;
+    font-size: 15px;
+}
+.mr-3{
+    color:#5e5e5e;
+    font-size: 13px;
+    padding-left: 15px;
+    padding-top: 10px;
+}
+
+.text-green{
+    color: #37B96E;
+}
+.card-body > h5{
+    font-weight: bold;
+}
+.card-body{
+    padding: 8px;
+}
+
+.mr-5 > .form-card , .mr-3 > .form-card, .form-card-cash {
+  border: none;
+  font-style: italic;
+  width: 80%;
+}
+
+.mr-5 > .form-card:focus , .mr-3 > .form-card:focus{
+  border: none;
+  font-style: italic;
+  width: 80%;
+}
